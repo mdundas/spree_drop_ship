@@ -151,7 +151,7 @@ class Spree::DropShipOrder < ActiveRecord::Base
 
     # Updates the drop ship order's total by getting the shipment totals.
     def update_total
-      self.total = self.shipments.map(&:total_cost).sum
+      self.total = self.shipments.map(&:item_cost).sum
     end
 
 end
